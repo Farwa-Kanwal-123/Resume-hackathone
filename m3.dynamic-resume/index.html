@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <form id="resumeForm" class="form-grid">
+                <h2>Resume Builder Form</h2>
+                
+                <!-- Left Column -->
+                <div class="form-column">
+                    <h3>Personal Information</h3>
+                    <input type="text" id="fullName" placeholder="Full Name" required>
+                    <input type="text" id="title" placeholder="Professional Title (e.g., Software Developer)" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                    <input type="text" id="address" placeholder="Location (e.g., City, Country)" required>
+                    <input type="text" id="linkedin" placeholder="LinkedIn URL">
+                    <input type="text" id="github" placeholder="GitHub URL">
+
+                    <div class="profile-image-section">
+                        <h3>Profile Image</h3>
+                        <input type="file" id="profileImage" accept="image/*" onchange="handleImageUpload(this)">
+                        <div id="imagePreview" class="image-preview">
+                            <img id="preview" src="#" alt="Profile Preview" style="display: none; max-width: 200px; max-height: 200px;">
+                        </div>
+                    </div>
+
+                    <h3>Professional Summary</h3>
+                    <textarea id="summary" placeholder="Write a brief professional summary" required></textarea>
+
+                    <h3>Education</h3>
+                    <div id="educationFields">
+                        <div class="education-entry">
+                            <input type="text" class="degree" placeholder="Degree" required>
+                            <input type="text" class="institution" placeholder="Institution" required>
+                            <input type="text" class="year" placeholder="Year" required>
+                        </div>
+                    </div>
+                    <button type="button" id="addEducation">Add More Education</button>
+                </div>
+
+                <!-- Right Column -->
+                <div class="form-column">
+                    <h3>Work Experience</h3>
+                    <div id="experienceFields">
+                        <div class="experience-entry">
+                            <input type="text" class="position" placeholder="Position" required>
+                            <input type="text" class="company" placeholder="Company" required>
+                            <input type="text" class="duration" placeholder="Duration (e.g., 2020 - Present)" required>
+                            <textarea class="responsibilities" placeholder="Responsibilities (one per line)" required></textarea>
+                        </div>
+                    </div>
+                    <button type="button" id="addExperience">Add More Experience</button>
+
+                    <h3>Skills</h3>
+                    <input type="text" id="programming" placeholder="Programming Languages (comma-separated)" required>
+                    <input type="text" id="frontend" placeholder="Frontend Skills (comma-separated)" required>
+                    <input type="text" id="backend" placeholder="Backend Skills (comma-separated)" required>
+                    
+                    <h3>Key Projects</h3>
+                    <textarea id="projects" placeholder="Enter projects in this format:
+Project Title 1
+Project description goes here...
+
+Project Title 2
+Project description goes here..." required></textarea>
+
+                    <h3>Technical Skills</h3>
+                    <div class="skills-section">
+                        <label for="programming">Programming Languages (comma separated)</label>
+                        <input type="text" id="programming2" placeholder="e.g., JavaScript, Python, Java" required>
+                        
+                        <label for="frontend">Frontend Skills (comma separated)</label>
+                        <input type="text" id="frontend2" placeholder="e.g., React, HTML5, CSS3" required>
+                        
+                        <label for="backend">Backend Skills (comma separated)</label>
+                        <input type="text" id="backend2" placeholder="e.g., Node.js, Express, MongoDB" required>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="submit-btn">Generate Resume</button>
+            </form>
+        </div>
+    </div>
+    <script src="dist/app.js"></script>
+</body>
+</html>

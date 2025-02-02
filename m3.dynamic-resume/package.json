@@ -1,0 +1,13 @@
+{
+    "name": "dynamic-resume-builder",
+    "version": "1.0.0",
+    "description": "A dynamic resume builder using TypeScript",
+    "main": "dist/app.js",
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc -w"
+    },
+    "devDependencies": {
+        "typescript": "^4.9.5"
+    }
+}
